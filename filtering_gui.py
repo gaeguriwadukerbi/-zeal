@@ -26,7 +26,13 @@ def display_image(image, canvas):
     if len(image.shape) == 2:
         image = cv2.cvtColor(image, cv2.COLOR_GRAY2RGB)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    
+    canvas_width = canvas.winfo_width()
+    canvas_height = canvas.winfo_height()
+    
     image = Image.fromarray(image)
+    image.thumbnail((canvas_width, canvas_height), Image.Resampling.LANCZOS)
+    
     img_display = ImageTk.PhotoImage(image)
     canvas.image = img_display
     canvas.create_image(0, 0, anchor=NW, image=img_display)
@@ -46,7 +52,7 @@ def load_image():
             print(f"Failed to load image from {file_path}: {e}")
 
 root = Tk()
-root.title("Image Filter Tool")
+root.title("이미지 필터 툴")
 root.geometry("1000x600")
 
 img = None
