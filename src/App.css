@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+  width: 800px;
+  /*height: 180px; */
+  border: 1px solid gray;
+  margin: 10px;
+}
+
+.pStyle { 
+  background-color: lightblue;
+  color: green
+}
+
+.Menu {
+  text-align: center;
+  background-color: #f4f873;
+  font-size: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.Contents {
+  display: flex;
+  align-items: center;
+}
+
+.Image {
+  width: 150px;
+  float: left;
+  margin-right: 20px;
+}
+
+.Para1 {
+  margin-left: auto;
+}
+
+.App {
+  width: 1000px;
+  margin: auto;
+}
