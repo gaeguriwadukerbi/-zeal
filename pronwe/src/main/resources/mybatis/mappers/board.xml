@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.board">
+    <resultMap id="boardResult" type="boardVO">
+        <result property="bID" column="bID" />
+        <result property="bTitle" column="bTitle"/>
+        <result property="bwriteDate" column="bWriteDate"/>
+    </resultMap>
+    <!-- i have no idea wats going on -->
+    <select id="selectAllboardList" resultMap="boardResult">
+        <![CDATA[
+            select * from tbl_board order by bWriteDate desc
+        ]]
+    </select>
+</mapper>
