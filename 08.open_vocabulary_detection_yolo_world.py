@@ -1,4 +1,6 @@
 # YOLOv8 라이브러리 및 torch 임포트
+import os
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 from ultralytics import YOLOWorld
 import torch
 import cv2
@@ -15,7 +17,7 @@ model.set_classes(["person", "cup", "head"])
 
 # 웹캠 비디오 캡처 시작 (기본 카메라)
 #cap = cv2.VideoCapture(0)
-cap = cv2.VideoCapture("eyes.jpg")
+cap = cv2.VideoCapture(0)  # 기본 웹캠 사용
 if not cap.isOpened():
     print("웹캠을 열 수 없습니다.")
     exit()
