@@ -3,7 +3,7 @@ import json
 import requests
 
 # Ollama 모델에 질문하기
-def query_to_gemma(input_text):
+def query_to_bot(input_text):
     url = "http://localhost:11434/api/generate"
     about_model = {
         "model": "gemma2:9b",
@@ -25,7 +25,7 @@ class Post_office(BaseHTTPRequestHandler):
         post_data = self.rfile.read(content_length).decode('utf-8')
 
         # Ollama 모델에 질문하고 응답 생성
-        model_response = query_to_gemma(post_data)
+        model_response = query_to_bot(post_data)
 
         self.send_response(200)
         self.send_header('Content-type', 'application/json;charset=utf-8')
@@ -34,7 +34,7 @@ class Post_office(BaseHTTPRequestHandler):
 
 # 서버 실행
 def run_server():
-    server_address = ('', 8000)
+    server_address = ('', 7777)
     httpd = HTTPServer(server_address, Post_office)
     print('서버 실행 중...')
     httpd.serve_forever()
