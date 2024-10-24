@@ -12,7 +12,7 @@ def call_Yes_Man():
             break
         
         # 서버로 POST 요청 보내기
-        response = requests.post("http://localhost:8000", data=user_input)
+        response = requests.post("http://localhost:7777", data=user_input)
         
         # 서버로부터 받은 응답 출력
         if response.status_code == 200:
